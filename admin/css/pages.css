@@ -1,0 +1,31 @@
+#page_screenshot {
+	position:fixed;
+	top:200px;
+	right:300px;
+	width:280px;
+	text-align:center;
+	z-index:99;
+	border:1px solid #787676;
+	border-right:2px solid #585656;
+	border-bottom:2px solid #585656;	
+}
+.editZone {
+	position:relative;
+	text-align:center;
+	width:250px;
+	margin:10px;
+}
+.editZone div {
+	border:1px solid #000;
+	background-color:#FE8C02;
+	position:absolute;
+	cursor:pointer;
+	-moz-opacity:.8;
+	opacity:.8;
+	filter:alpha(opacity=80);
+	display:table;
+	z-index:40;
+}
+.editZone img {
+	/*position:absolute;*/
+}
