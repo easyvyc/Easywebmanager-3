@@ -23,7 +23,7 @@
 
 <block name="not_empty">
 
-<block name="no">
+
 
 	<div class="tbltop" ondblclick="javascript: togglePannelAnimatedStatus('page_conversion',10,40);" id="last_visitors_drag">
 	<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
@@ -57,7 +57,7 @@ document.write('</object>');
 		
 		</div>
 
-</block name="no">
+
 
 
 	<div class="tbltop" ondblclick="javascript: togglePannelAnimatedStatus('page_count_average',10,40);" id="last_visitors_drag">

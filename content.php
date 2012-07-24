@@ -36,6 +36,10 @@ include_once(CLASSDIR_."object.class.php");
 include_once(CLASSDIR_."easytpl.class.php");
 $tpl = & new easytpl(TPLDIR_."content.tpl", "templateVariables", CACHETPLDIR_);
 
+if(isset($_GET['pdf'])&&$_GET['pdf']==1){
+	$tpl->setFile(TPLDIR_."print.tpl");
+}
+
 // Underconstruction
 if($XML_CONFIG['toggler']!=1/* site disabled */ && !isset($_SESSION['admin']['id']) /* view website for admin */){
 	$tpl->setFile(TPLDIR_."underconstruction.tpl", "templateVariables", CACHETPLDIR_);

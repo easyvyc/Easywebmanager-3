@@ -2,7 +2,7 @@ $(document).ready(function () {
 	$('a[rel]').lightBox(); 
 	$('.easy_slideshow').each(function(){
 		speed = parseInt($(this).attr('speed'))*1000;
-		$(this).find('a').fadeOut(0);
+		$(this).find('a').hide();
 		$(this).find('.index_0').fadeIn(1000);
 		$(this).everyTime(parseInt($(this).attr('speed'))*1000, function(i){ index=i%$(this).find('a').length; $(this).find('a').fadeOut(1000); $(this).find('.index_'+index).fadeIn(1000); });
 	}); 
@@ -34,6 +34,32 @@ $(document).ready(function () {
 	$("#lang div").click(function(event){ event.stopPropagation(); });
 	$("#currency div").click(function(event){ event.stopPropagation(); });
 	
+
+	// html input placeholder for stupid browsers like IE
+	if(!Modernizr.input.placeholder){
+
+	$('[placeholder]').focus(function() {
+	  var input = $(this);
+	  if (input.val() == input.attr('placeholder')) {
+		input.val('');
+		input.removeClass('placeholder');
+	  }
+	}).blur(function() {
+	  var input = $(this);
+	  if (input.val() == '' || input.val() == input.attr('placeholder')) {
+		input.addClass('placeholder');
+		input.val(input.attr('placeholder'));
+	  }
+	}).blur();
+	$('[placeholder]').parents('form').submit(function() {
+	  $(this).find('[placeholder]').each(function() {
+		var input = $(this);
+		if (input.val() == input.attr('placeholder')) {
+		  input.val('');
+		}
+	  })
+	});
+
 //	jQuery(function(){
 //		jQuery('#pr_menu').superfish();
 //	});	

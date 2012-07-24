@@ -13,8 +13,9 @@ input, textarea, .multiselect {
 textarea {
 	height:80px;
 }
-input[submit] {
+input[type=submit] {
 	width:auto;
+	padding:3px 10px;
 }
 .formElementsField .fo_text {
 	width:250px;

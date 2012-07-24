@@ -27,8 +27,12 @@ include_once(CLASSDIR_."images.class.php");
 $img_obj = & new images();
 
 
+
+$img = urldecode($_GET['image']);
+$img = ereg_replace($configFile->variable['site_url'], '', $img);
+
 if(in_array(strtolower($extension), $valid_images)){
-	$img_obj->process(DOCROOT.urldecode($_GET['image']), '', array('size_width'=>$_GET['w'], 'size_height'=>$_GET['h'], 'resize_type'=>$_GET['t'], 'quality'=>100));
+	$img_obj->process(DOCROOT.$img, '', array('size_width'=>$_GET['w'], 'size_height'=>$_GET['h'], 'resize_type'=>$_GET['t'], 'quality'=>100));
 }else{
 	redirect($main_configFile->variable['site_admin_url']."images/extension_icons/$extension.gif");
 }

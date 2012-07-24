@@ -15,12 +15,14 @@
 <div class="fleft">{phrases.copyrights}</div>
 <div class="fright">
 
-	<a href="http://www.adme.lt" target="_blank" title="Interneto svetainių kūrimas">Interneto svetainių kūrimas adme</a>
-	&nbsp;&nbsp;&nbsp;&nbsp;
 	<block name="lng_lt">
+	<a href="http://www.adme.lt" target="_blank" title="Interneto svetainių kūrimas">Interneto svetainių kūrimas adme</a>
+	<br />
 	<a href="http://www.easywebmanager.lt" target="_blank" title="Turinio Valdymo Sistema">Turinio valdymo sistema easywebmanager</a>
 	</block name="lng_lt">
 	<block name="lng_lt" no>
+	<a href="http://www.adme.lt" target="_blank" title="Interneto svetainių kūrimas">Interneto svetainių kūrimas adme</a>
+	<br />
 	<a href="http://www.easywebmanager.com" target="_blank" title="Content Management System">Content management system easywebmanager</a>
 	</block name="lng_lt" no>
 

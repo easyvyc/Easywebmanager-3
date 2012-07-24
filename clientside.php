@@ -25,6 +25,7 @@ $cs_cache_file = CACHEDIR."data/{$_GET['f']}.dat";
 $arr = array();
 if($_GET['f']=='js'){
 	$arr[] = array('file'=>"js/jquery.min.js", 'compress'=>0);
+	$arr[] = array('file'=>"js/modernizr.js", 'compress'=>0);
 	$arr[] = array('file'=>"js/jquery-ui.js", 'compress'=>0);
 	$arr[] = array('file'=>"js/jquery.lightbox.js", 'compress'=>0);
 	$arr[] = array('file'=>"js/jquery.timer.js", 'compress'=>1);
