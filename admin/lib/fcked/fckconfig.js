@@ -54,6 +54,10 @@ FCKConfig.PluginsPath = FCKConfig.BasePath + 'plugins/' ;
 // FCKConfig.Plugins.Add( 'dragresizetable' );
 FCKConfig.AutoGrowMax = 400 ;
 
+<<<<<<< HEAD
+=======
+FCKConfig.Plugins.Add( 'easyform', 'lt,en');
+>>>>>>> 2ad9858e80767c041fc8283a2072391720111870
 FCKConfig.Plugins.Add( 'easydate', 'lt,en');
 FCKConfig.Plugins.Add( 'gallery', 'lt,en');
 FCKConfig.Plugins.Add( 'video', 'lt,en');
@@ -103,7 +107,11 @@ FCKConfig.IgnoreEmptyParagraphValue = true ;
 FCKConfig.FloatingPanelsZIndex = 10000 ;
 FCKConfig.HtmlEncodeOutput = false ;
 
+<<<<<<< HEAD
 FCKConfig.TemplateReplaceAll = false ;
+=======
+FCKConfig.TemplateReplaceAll = true ;
+>>>>>>> 2ad9858e80767c041fc8283a2072391720111870
 FCKConfig.TemplateReplaceCheckbox = true ;
 
 FCKConfig.ToolbarLocation = 'In' ;
@@ -112,7 +120,11 @@ FCKConfig.ToolbarSets["Default"] = [
 	['Source','DocProps','-','Templates'],
 	['Cut','Copy','Paste','PasteText','PasteWord'],
 	['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+<<<<<<< HEAD
 	['Form','Checkbox','Radio','TextField','Textarea','Select','Button','HiddenField','paypal'],
+=======
+	['_Form','Checkbox','Radio','TextField','Textarea','Select','Button','HiddenField','paypal'],
+>>>>>>> 2ad9858e80767c041fc8283a2072391720111870
 	'/',
 	['Bold','Italic','Underline','StrikeThrough','-','Subscript','Superscript'],
 	['OrderedList','UnorderedList','-','Outdent','Indent','Blockquote','CreateDiv'],
@@ -174,7 +186,11 @@ FCKConfig.Keystrokes = [
 	[ SHIFT + 32 /*SPACE*/, 'Nbsp' ]
 ] ;
 
+<<<<<<< HEAD
 FCKConfig.ContextMenu = ['Generic','Link','Anchor','Image','Flash','Select','Textarea','Checkbox','Radio','TextField','HiddenField','ImageButton','Button','BulletedList','NumberedList','Table','Form','DivContainer'] ;
+=======
+FCKConfig.ContextMenu = ['Generic','Link','Anchor','Image','Flash','Select','Textarea','Checkbox','Radio','TextField','HiddenField','ImageButton','Button','BulletedList','NumberedList','Table','_Form','DivContainer'] ;
+>>>>>>> 2ad9858e80767c041fc8283a2072391720111870
 FCKConfig.BrowserContextMenuOnCtrl = false ;
 FCKConfig.BrowserContextMenu = false ;
 
@@ -182,8 +198,13 @@ FCKConfig.EnableMoreFontColors = true ;
 FCKConfig.FontColors = '000000,993300,333300,003300,003366,000080,333399,333333,800000,FF6600,808000,808080,008080,0000FF,666699,808080,FF0000,FF9900,99CC00,339966,33CCCC,3366FF,800080,999999,FF00FF,FFCC00,FFFF00,00FF00,00FFFF,00CCFF,993366,C0C0C0,FF99CC,FFCC99,FFFF99,CCFFCC,CCFFFF,99CCFF,CC99FF,FFFFFF' ;
 
 FCKConfig.FontFormats	= 'p;h1;h2;h3;h4;h5;h6;pre;address;div' ;
+<<<<<<< HEAD
 FCKConfig.FontNames		= 'Arial;Courier New;Tahoma;Times New Roman;Verdana' ;
 FCKConfig.FontSizes		= '8px;9px;10px;11px;12px;13px;14px;15px;16px;17px;18px;20px;22px;24px;26px;30px;' ;
+=======
+FCKConfig.FontNames		= 'Arial;Comic Sans MS;Courier New;Tahoma;Times New Roman;Verdana' ;
+FCKConfig.FontSizes		= 'smaller;larger;xx-small;x-small;small;medium;large;x-large;xx-large' ;
+>>>>>>> 2ad9858e80767c041fc8283a2072391720111870
 
 FCKConfig.StylesXmlPath		= FCKConfig.EditorPath + 'fckstyles.xml' ;
 FCKConfig.TemplatesXmlPath	= FCKConfig.EditorPath + 'fcktemplates.xml' ;
@@ -220,7 +241,11 @@ FCKConfig.DefaultFontSizeLabel = '' ;
 FCKConfig.DefaultLinkTarget = '' ;
 
 // The option switches between trying to keep the html structure or do the changes so the content looks like it was in Word
+<<<<<<< HEAD
 FCKConfig.CleanWordKeepsStructure = true ;
+=======
+FCKConfig.CleanWordKeepsStructure = false ;
+>>>>>>> 2ad9858e80767c041fc8283a2072391720111870
 
 // Only inline elements are valid.
 FCKConfig.RemoveFormatTags = 'b,big,code,del,dfn,em,font,i,ins,kbd,q,samp,small,span,strike,strong,sub,sup,tt,u,var' ;

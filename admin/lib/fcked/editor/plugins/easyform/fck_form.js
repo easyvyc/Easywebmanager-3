@@ -56,7 +56,11 @@ window.onload = function()
 			if(this.name && jQuery.inArray(this.name, required_fields_arr)==-1){ 
 				required_fields_arr[required_fields_arr.length] = this.name;
 				//alert(required_fields_arr[required_fields_arr.length-1]+'  '+jQuery.inArray(this.name, required_fields_arr));
+<<<<<<< HEAD
 				$('#divRequired').append('<div style="padding:5px;"><input type="checkbox" id="'+this.name+'" '+(is_checked(this.name, form_data.required_fields)?'checked':'')+' style="vertical-align:middle" /><label for="'+this.name+'">'+this.name+'</label></div>');
+=======
+				$('#divRequired').append('<div style="padding:5px;"><input type="checkbox" id="'+this.name+'" '+(is_checked(this.name, form_data.required_fields)?'checked':'')+' /><label>'+this.name+'</label></div>');
+>>>>>>> 2ad9858e80767c041fc8283a2072391720111870
 			}
 		});
 		
@@ -177,7 +181,11 @@ function Ok()
 	SetAttribute( oActiveEl, 'action', "post.php?formid="+FORMID ) ;
 	oActiveEl.method = "post" ;
 	SetAttribute( oActiveEl, 'target', "FORMS_IFRAME" ) ;
+<<<<<<< HEAD
 	SetAttribute( oActiveEl, 'id', GetE('txtName').value ) ;
+=======
+	SetAttribute( oActiveEl, 'id', oActiveEl.name ) ;
+>>>>>>> 2ad9858e80767c041fc8283a2072391720111870
 	
 
 	return true ;

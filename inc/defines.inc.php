@@ -2,7 +2,11 @@
 
 $BASE_URL = $configFile->variable['site_url'];
 
+<<<<<<< HEAD
 define('EASYWEBMANAGER_VERSION', "3.8");
+=======
+define('EASYWEBMANAGER_VERSION', "3.7");
+>>>>>>> 2ad9858e80767c041fc8283a2072391720111870
 
 // admin side
 define('DOCROOT', $_SERVER['DOCUMENT_ROOT']."{$configFile->variable['project_dir']}");

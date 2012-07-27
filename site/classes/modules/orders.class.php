@@ -503,6 +503,7 @@ class orders extends catalog{
     	$mailer->CharSet = "UTF-8";
 		$mailer->ContentType = "text/plain";
 
+<<<<<<< HEAD
 		$ordered_items = $this->listOrderedItems($order_data['id']);		
 		
 		if($this->module_info['xml_settings']['html_email']['value']){
@@ -514,6 +515,12 @@ class orders extends catalog{
 			$message = ereg_replace("{sum}", $order_data['order_sum'], $message);
 			$message = ereg_replace("{currency}", $order_data['currency'], $message);
 		}
+=======
+		$mailer->Subject = $phrases['order_email_subject'];
+		$message = ereg_replace("<br />", "", $phrases['order_email_body']);
+		$message = ereg_replace("{sum}", $order_data['order_sum'], $message);
+		$message = ereg_replace("{currency}", $order_data['currency'], $message);
+>>>>>>> 2ad9858e80767c041fc8283a2072391720111870
 
 		$mailer->Body = $message;
 		
@@ -546,6 +553,7 @@ class orders extends catalog{
     	}
 		
 	}
+<<<<<<< HEAD
 
 	function generateHTMLEmail($o_data, $o_items){
 		global $phrases;
@@ -561,6 +569,8 @@ class orders extends catalog{
 		$tpl->setLoop('shipping_info', $this->getShippingInfo());
 		return $tpl->parse();
 	}	
+=======
+>>>>>>> 2ad9858e80767c041fc8283a2072391720111870
 	
 	function clearCart(){
 		unset($_SESSION['cart']);
@@ -574,4 +584,8 @@ class orders extends catalog{
 		
 }
 
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> 2ad9858e80767c041fc8283a2072391720111870
