@@ -1,0 +1,22 @@
+.tbltop {
+	height:32px;
+	background:url('../images/title_bgr.gif') repeat-x;
+	position:relative;
+	z-index:10;
+}
+.tbltop table tr td, .tbltop table tr td a {
+	font-weight:bold;
+	color:#FFFFFF;
+	text-shadow:1px 1px 0 #000000;
+}
+.tbltop table tr td.round {
+	background:url('../images/title_round.gif') no-repeat;
+	width:34px;
+	text-align:center;
+}
+.contextMenu div.title {
+	background:#787676;
+}
+.contextMenu div.text {
+	background:#C8C6C6;
+}

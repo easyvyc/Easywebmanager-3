@@ -1,0 +1,30 @@
+body {
+	margin:0px;
+	background:url('../images/login_gradient.jpg') center top repeat-x #E2E2E2;
+}
+form {
+	margin:0px;
+	padding:0px;
+}
+a {
+	color:#F29733;
+}
+.lang {
+	width:28px;
+}
+.lang a {
+	color:#000000;
+}
+table .form {
+	width:498px;
+	height:241px;
+	background:url('../images/login.jpg') center no-repeat;
+	text-align:center;
+}
+.white {
+	background:#FFFFFF;
+}
+.title {
+	color:#F29733;
+	font-weight:bold;
+}

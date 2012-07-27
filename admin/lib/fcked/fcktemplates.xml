@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Templates imagesBasePath="fck_template/images/" ><Template title="Contact form" image="form.jpg" ><Description ></Description><Html ><![CDATA[<form name="contact" action="post.php?formid=14181" method="post" target="FORMS_IFRAME" id="contact">
+    <table width="100%" border="0" cellpadding="3" cellspacing="0">
+        <tbody>
+            <tr>
+                <td>Name:*</td>
+                <td><input name="name" type="text" /></td>
+            </tr>
+            <tr>
+                <td>E-mail:*</td>
+                <td><input name="email" type="text" /></td>
+            </tr>
+            <tr>
+                <td>Question:*</td>
+                <td><textarea name="question"></textarea></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input name="" type="submit" value="Send" /></td>
+            </tr>
+        </tbody>
+    </table>
+</form>]]></Html></Template></Templates>

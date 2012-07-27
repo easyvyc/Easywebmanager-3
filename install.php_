@@ -1,0 +1,78 @@
+<?php
+/*
+ * Created on 2009.07.07
+ *
+ * To change the template for this generated file go to
+ * Window - Preferences - PHPeclipse - PHP - Code Templates
+ */
+
+
+error_reporting(E_USER_ERROR);
+
+
+// check if script filename is install.php
+if(substr(__FILE__, -11)!="install.php"){
+	exit;
+}
+
+if(!isset($_GET['step'])){
+	$_GET['step'] = "check";
+}
+
+$CONFIGFILE = "inc/settings.inc.php";
+
+
+echo <<<HEAD
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<title>Easywebmanager install</title>
+
+
+
+<meta name="GOOGLEBOT" content="noindex,nofollow" />
+<meta name="ROBOTS" content="noindex,nofollow" />
+<meta name="GENERATOR" content="easywebmanager" />
+
+
+<link rel="stylesheet" type="text/css" href="files/system/style.css" />
+
+<script type="text/javascript" src="files/data/jquery.js"></script>
+
+</head>
+<body>
+
+<div id="main">
+<a href="http://www.easywebmanager.com" target="_blank"><img src="files/system/images/logo1.jpg" alt="" /></a>
+<br /><br />
+HEAD;
+
+
+include("install/lang/lt.php");
+include("install/lib/func.php");
+
+$tabs[] = array('title'=>$lang['check']['title'], 'name'=>'check');
+$tabs[] = array('title'=>$lang['config']['title'], 'name'=>'config');
+$tabs[] = array('title'=>$lang['db']['title'], 'name'=>'db');
+
+echo "<div>";
+foreach($tabs as $val){
+	echo "<div class=\"tab ".($_GET['step']==$val['name']?"taba":"")."\">{$val['title']}</div>";
+}
+echo "</div><br />";
+
+
+include("install/{$_GET['step']}.php");
+
+
+echo <<<FOOT
+</div>
+</body>
+</html>
+FOOT;
+
+?>

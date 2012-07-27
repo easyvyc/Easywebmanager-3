@@ -1,0 +1,261 @@
+<script type="text/javascript">
+
+function showByIp(ip){
+	document.getElementById('filteritem___ipaddress').value = ip;
+	document.getElementById('filteritem___start_visit_time___from').value = '';
+	document.getElementById('filteritem___start_visit_time___to').value = '';
+	PageClass.submitForm('<?php echo $templateVariables->vars["config.site_admin_url"]; ?>main.php?content=stat&module=stat&page=detail&id=0&ajax=1&area=tpl_grid', 'items_list_grid', document.forms['filter___items_list']);
+}
+
+</script>
+
+<table border="0" cellpadding="2" cellspacing="2" width="100%" align="left">
+	
+	<tr>
+		<td align="left" valign="top" height="20" style="width:100%;">
+
+		<?php include $tpl_menu->cacheFile; ?>
+
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+
+
+	<div class="tbltop" ondblclick="javascript: togglePannelAnimatedStatus('items_list_grid',10,40);" id="items_list_grid_drag">
+	<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td width="10"></td>
+			<td class="round"><img src="images/flag.png" class="png" style="vertical-align:middle;" alt="" /></td>
+			<td>
+	&nbsp;<span style="cursor:default;" ><?php echo $templateVariables->vars["phrases.stat.show_stat_by_date"]; ?></span>
+			</td>
+		</tr>
+	</table>
+	</div>	
+
+<div id="items_list_grid">
+<?php include $grid_obj->tpl->cacheFile; ?>
+</div></div>
+
+
+<div id="visitor_map">
+
+
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<?php echo $templateVariables->vars["stat_config.google_map_code"]; ?>" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+document.write('<div id="gmap201081015255" style="width:100%; height:450px;">.<\/div>');
+function CreateGMap201081015255() {
+	if(!GBrowserIsCompatible()) return;
+	var allMapTypes = [G_NORMAL_MAP, G_SATELLITE_MAP, G_HYBRID_MAP, G_PHYSICAL_MAP] ;
+	var map = new GMap2(document.getElementById("gmap201081015255"), {mapTypes:allMapTypes});
+	map.setCenter(new GLatLng(44.9648,-23.20312), 3);
+	map.setMapType( allMapTypes[ 0 ] );
+	map.addControl(new GSmallMapControl());
+	map.addControl(new GMapTypeControl());
+	
+	markers = new Array;
+
+	<?php foreach($templateVariables->loops["markers"] as $markers_key => $markers_val){ ?>
+	markers[markers.length] = { lat:<?php echo $markers_val["latitude"]; ?>, lon:<?php echo $markers_val["longitude"]; ?>, text:"<?php echo $markers_val["text"]; ?>" };
+	<?php } ?>
+
+	AddMarkers( map, markers ) ;
+}
+</script>
+<script type="text/javascript">
+// FCK googlemapsEnd v1.97
+function AddMarkers( map, aPoints )
+{
+	for (var i=0; i<aPoints.length ; i++)
+	{
+		var point = aPoints[i] ;
+		map.addOverlay( createMarker(new GLatLng(point.lat, point.lon), point.text) );
+	}
+}
+function createMarker( point, html )
+{
+	var marker = new GMarker(point);
+	GEvent.addListener(marker, "click", function() {
+		marker.openInfoWindowHtml(html, {maxWidth:200});
+	});
+	return marker;
+}
+if (window.addEventListener) {
+    window.addEventListener("load", CreateGMap201081015255, false);
+} else {
+    window.attachEvent("onload", CreateGMap201081015255);
+}
+onunload = GUnload ;
+</script>
+
+
+</div>
+
+<?php if($templateVariables->vars["no"]){ ?>
+<?php if(!$templateVariables->vars["empty"]){ ?>		
+		
+		
+	<div class="tbltop" ondblclick="javascript: togglePannelAnimatedStatus('referers',10,40);" id="referers_drag">
+	<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td width="10"></td>
+			<td class="round"><img src="images/flag.png" class="png" style="vertical-align:middle;" alt="" /></td>
+			<td>
+	&nbsp;<span style="cursor:default;" ><?php echo $templateVariables->vars["phrases.stat.visitors_by_referer"]; ?></span>
+			</td>
+		</tr>
+	</table>
+	</div>	
+		
+		<div class="stat_content search_results" id="referers" style="display:none">
+<center>
+
+<script type="text/javascript">
+var ampie_path = '../files/data/ampie/' 
+var ampie_settingsFile = escape('<?php echo $templateVariables->vars["config.site_url"]; ?>files/data/ampie/ampie_settings.php?stat=referers&from_date=<?php echo $templateVariables->vars["from_date"]; ?>&to_date=<?php echo $templateVariables->vars["to_date"]; ?>');
+var ampie_flashWidth = '100%';
+var ampie_flashHeight = '220';
+var ampie_backgroundColor = "#FFFFFF";
+</script>
+<script type="text/javascript" src="../files/data/ampie/ampie.js"></script><br>
+
+
+</center>
+		</div>
+
+	<div class="tbltop" ondblclick="javascript: togglePannelAnimatedStatus('countries',10,40);" id="countries_drag">
+	<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td width="10"></td>
+			<td class="round"><img src="images/flag.png" class="png" style="vertical-align:middle;" alt="" /></td>
+			<td>
+	&nbsp;<span style="cursor:default;" ><?php echo $templateVariables->vars["phrases.stat.visitors_by_country"]; ?></span>
+			</td>
+		</tr>
+	</table>
+	</div>	
+
+		
+		<div class="stat_content search_results" id="countries" style="display:none">
+		
+<center>
+
+<script type="text/javascript">
+var ampie_path = '../files/data/ampie/' 
+var ampie_settingsFile = escape('<?php echo $templateVariables->vars["config.site_url"]; ?>files/data/ampie/ampie_settings.php?stat=countries&from_date=<?php echo $templateVariables->vars["from_date"]; ?>&to_date=<?php echo $templateVariables->vars["to_date"]; ?>');
+var ampie_flashWidth = '100%';
+var ampie_flashHeight = '220';
+var ampie_backgroundColor = "#FFFFFF";
+</script>
+<script type="text/javascript" src="../files/data/ampie/ampie.js"></script><br>
+
+
+</center>
+		
+		
+		</div>
+
+
+	<div class="tbltop" ondblclick="javascript: togglePannelAnimatedStatus('keywords',10,40);" id="keywords_drag">
+	<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td width="10"></td>
+			<td class="round"><img src="images/flag.png" class="png" style="vertical-align:middle;" alt="" /></td>
+			<td>
+	&nbsp;<span style="cursor:default;" ><?php echo $templateVariables->vars["phrases.stat.visitors_by_keyword"]; ?></span>
+			</td>
+		</tr>
+	</table>
+	</div>	
+		
+		<div class="stat_content search_results" id="keywords" style="display:none;">
+		
+<center>
+
+<script type="text/javascript">
+var ampie_path = '../files/data/ampie/' 
+var ampie_settingsFile = escape('<?php echo $templateVariables->vars["config.site_url"]; ?>files/data/ampie/ampie_settings.php?stat=keywords&from_date=<?php echo $templateVariables->vars["from_date"]; ?>&to_date=<?php echo $templateVariables->vars["to_date"]; ?>');
+var ampie_flashWidth = '100%';
+var ampie_flashHeight = '220';
+var ampie_backgroundColor = "#FFFFFF";
+</script>
+<script type="text/javascript" src="../files/data/ampie/ampie.js"></script><br>
+
+
+</center>
+		
+		
+		</div>
+
+
+	<div class="tbltop" ondblclick="javascript: togglePannelAnimatedStatus('pages',10,40);" id="pages_drag">
+	<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td width="10"></td>
+			<td class="round"><img src="images/flag.png" class="png" style="vertical-align:middle;" alt="" /></td>
+			<td>
+	&nbsp;<span style="cursor:default;" ><?php echo $templateVariables->vars["phrases.stat.visitors_by_pages"]; ?></span>
+			</td>
+		</tr>
+	</table>
+	</div>	
+		
+		<div class="stat_content search_results" id="pages" style="display:none;">
+		
+<center>
+
+<script type="text/javascript">
+var ampie_path = '../files/data/ampie/' 
+var ampie_settingsFile = escape('<?php echo $templateVariables->vars["config.site_url"]; ?>files/data/ampie/ampie_settings.php?stat=pages&from_date=<?php echo $templateVariables->vars["from_date"]; ?>&to_date=<?php echo $templateVariables->vars["to_date"]; ?>');
+var ampie_flashWidth = '100%';
+var ampie_flashHeight = '220';
+var ampie_backgroundColor = "#FFFFFF";
+</script>
+<script type="text/javascript" src="../files/data/ampie/ampie.js"></script><br>
+
+
+</center>
+		
+		
+		</div>
+
+		
+<?php } ?>
+<?php } ?>
+		
+
+		
+		</td>
+	</tr>
+</table>
+
+
+<div class="formElementsFieldWYSIWYG" id="show_stat_item_main" style="position:absolute;z-index:1000;width:400px;display:none;">
+
+	<div class="tbltop" ondblclick="javascript: togglePannelAnimatedStatus('show_stat_item',10,40);" id="show_stat_item_drag">
+	<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td width="10"></td>
+			<td class="round"><img src="images/flag.png" class="png" style="vertical-align:middle;" alt="" /></td>
+			<td>
+	&nbsp;<span style="cursor:default;" ><?php echo $templateVariables->vars["elm.title"]; ?></span>
+			</td>
+			<td align="right">
+	<a style="cursor:pointer;" onclick="javascript: togglePannelAnimatedStatus('show_stat_item',10,40);" ><img src="images/minus.gif" border="0" style="vertical-align:middle;" vspace="0" hspace="0" alt="" /></a>&nbsp;
+	<a style="cursor:pointer;" onclick="javascript: $('show_stat_item_main').style.display='none';" ><img src="images/close.gif" border="0" style="vertical-align:middle;" vspace="0" hspace="0" alt="" /></a>&nbsp;
+			</td>
+		</tr>
+	</table>
+	</div>
+	
+	
+	<div id="show_stat_item" style="padding:3px;margin-top:-10px;">
+	</div>
+	
+</div>
+
+<script type="text/javascript">
+popup_show('show_stat_item_main', 'show_stat_item_drag', '', 'screen-right', 10, 100);
+</script>
